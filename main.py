@@ -32,11 +32,24 @@ num1 = int(input("What's the first number?: "))
 for op in operations:
     print(op)
 
-operation_symbol = input("Pick an operation from above: ")
+should_continue = True
 
-num2 = int(input("What's the second number?: "))
+while should_continue:
+    operation_symbol = input("Pick an operation: ")
 
-calculation_function = operations[operation_symbol]
-answer = calculation_function(num1, num2)
+    num2 = int(input("What's the next number?: "))
 
-print(f"{num1} {operation_symbol} {num2} = {answer}")
+    calculation_function = operations[operation_symbol]
+    answer = calculation_function(num1, num2)
+
+    print(f"{num1} {operation_symbol} {num2} = {answer}")
+
+    loop = input(f"Type 'y' to continue calculating with {answer}, or 'n' to quit: ")
+    if loop == 'y':
+        num1 = answer
+    elif loop == 'n':
+        should_continue = False
+        print("Goodbye!")
+    else:
+        should_continue = False
+        print("Invalid input. Terminating program.")
