@@ -28,7 +28,15 @@ operations = {
 
 
 num1 = int(input("What's the first number?: "))
-num2 = int(input("What's the second number?: "))
 
 for op in operations:
     print(op)
+
+num2 = int(input("What's the second number?: "))
+
+operation_symbol = input("Pick an operation from above: ")
+
+calculation_function = operations[operation_symbol]
+answer = calculation_function(num1, num2)
+
+print(f"{num1} {operation_symbol} {num2} = {answer}")
