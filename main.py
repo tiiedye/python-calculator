@@ -32,9 +32,9 @@ num1 = int(input("What's the first number?: "))
 for op in operations:
     print(op)
 
-num2 = int(input("What's the second number?: "))
-
 operation_symbol = input("Pick an operation from above: ")
+
+num2 = int(input("What's the second number?: "))
 
 calculation_function = operations[operation_symbol]
 answer = calculation_function(num1, num2)
